@@ -5,6 +5,8 @@ from .views import register_user, create_job_listing, submit_application
 from .views import user_login, user_logout, user_signup
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
+from django.urls import path, include
+
 
 urlpatterns = [
     path('register/', register_user, name='register_user'),
