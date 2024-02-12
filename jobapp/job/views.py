@@ -1,3 +1,5 @@
+
+
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
@@ -10,6 +12,8 @@ from django.contrib.auth.models import User
 from .models import JobListing, Application
 from .serializers import JobListingSerializer, ApplicationSerializer
 from django.contrib.auth.decorators import login_required
+
+
 
 @api_view(['POST'])
 def register_user(request):
@@ -69,3 +73,6 @@ def user_signup(request):
         pass
     else:
         return render(request, 'signup.html')
+
+def index(request):
+    return render(request, 'index.html')

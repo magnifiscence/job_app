@@ -6,9 +6,11 @@ from .views import user_login, user_logout, user_signup
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
 from django.urls import path, include
+from . import views
 
 
 urlpatterns = [
+    path('index/', views.index, name='index'),
     path('register/', register_user, name='register_user'),
     path('create-job/', create_job_listing, name='create_job_listing'),
     path('submit-application/', submit_application, name='submit_application'),
