@@ -1,7 +1,7 @@
 # job/urls.py
 
 from django.urls import path
-from .views import register_user, create_job_listing, submit_application
+from .views import register_user, job_listing, submit_application
 from .views import user_login, user_logout, user_signup
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
@@ -10,9 +10,8 @@ from . import views
 
 
 urlpatterns = [
-    path('index/', views.index, name='index'),
     path('register/', register_user, name='register_user'),
-    path('create-job/', create_job_listing, name='create_job_listing'),
+    path('create-job/', job_listing, name='job_listing'),
     path('submit-application/', submit_application, name='submit_application'),
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
